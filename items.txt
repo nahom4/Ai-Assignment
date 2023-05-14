@@ -1,0 +1,6 @@
+96
+Item,weight,value, n_items
+Phone,19,1000, 5
+Laptop,1.1,700, 2
+car,30,2000,1
+house,49,2500,2
