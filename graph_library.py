@@ -65,20 +65,27 @@ class graph:
         self.graph[start_node].append(end_node)
         
                 
-newgraph = graph()
 
 #let's create the graph
-file1 = open('cities.txt', 'r')
-lines = file1.readlines()
-
-for line in lines:
-    start,lat1,long1,goal,lat2,long2,weight = line.split()
-    newgraph.insert_edge(start,(goal,int(weight)))
-    newgraph.insert_edge(goal,(start,int(weight)))
+def create_graph(file_name):
     
-file1.close()
+    file1 = open(f'{file_name}.txt', 'r')
+    lines = file1.readlines()
 
-    
+    newgraph = graph()
+
+    for count,line in enumerate(lines):
+        start,lat1,long1,goal,lat2,long2,weight = line.split()
+        newgraph.insert_edge(start,(goal,int(weight)))
+        newgraph.insert_edge(goal,(start,int(weight)))
+
+
+    file1.close()
+    return newgraph.graph
+
+
+
+
     
 
 
